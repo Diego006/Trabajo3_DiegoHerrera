@@ -1,0 +1,54 @@
+---
+title: "Untitled"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r eval=TRUE}
+library(dplyr)
+
+wd = setwd("C:/Users/Dieca/OneDrive/Escritorio/trabajo3 _diego")
+pk = read.csv("pokemon.csv")
+pk
+
+attach(pk)
+
+spd = boxplot(Speed, horizontal = TRUE)
+
+stats_spd = boxplot.stats(Speed)
+
+spd
+stats_spd
+
+pk1 <- Speed[Speed < 50]
+length(Speed) - length(pk1)
+
+boxplot(pk1, horizontal = TRUE)
+
+spd_out <- filter(pk, pk$Total > 85)
+
+spd_out
+
+
+
+
+hp = boxplot(HP, horizontal = TRUE)
+stats_hp = boxplot.stats(HP)
+
+hp
+stats_hp
+
+pk2 <- HP[HP < 45]
+length(HP) - length(pk2)
+
+boxplot(pk2, horizontal = TRUE)
+
+HP_out <- filter(pk, pk$HP > 80 )
+
+HP_out
+
+```
+
